@@ -1,0 +1,118 @@
+<project name="projects" default="jar" basedir=".">
+
+   	<property name="src" location="src"/>
+  	<property name="build" location="build"/>
+  	<property name="dist"  location="dist"/>
+  	<property name="jar.location"  location="${dist}/lib"/>
+  	
+    <dirname property="projects.basedir" file="${ant.file.projects}"/> 
+    <echo>projects.basedir=${projects.basedir}</echo>
+
+	
+		<echo>Inside smartview project: smartview.basedir=${smartview.basedir}</echo>
+
+	  	<path id="project.classpath">
+	  		<fileset refid="sv.jars"/>
+	  		<fileset refid="common.dist"/>
+	  	</path>  	
+
+	   
+    <filelist id="project.build.files" dir="${projects.basedir}">	
+       	<file name="build.xml" />
+    </filelist>
+
+      <fileset id="sv.jars" dir="${projects.basedir}">
+                <include name="src/main/lib/*.jar"/>
+       </fileset>
+
+     <fileset id="common.jars" dir="${projects.basedir}">
+        <include name="src/main/lib/*.jar"/>
+      </fileset>     	     	  
+
+     <fileset id="common.dist" dir="${projects.basedir}">
+        <include name="dist/lib/*.jar"/>
+      </fileset>     	     	  
+      
+
+	<target name="init" depends="clean">    	
+    	<tstamp/>    	
+    	<mkdir dir="${build}"/>  
+    	<mkdir dir="${build}/classes"/>    
+
+  	</target>
+
+  	<target name="clean">
+  	</target>
+  	
+  	
+  	<target name="compile.individual" depends="init">     	  	 	
+    	<javac includeantruntime="false" debug="true" compiler="javac1.6" srcdir="${src}" destdir="${build}/classes">
+    		<classpath refid="project.classpath"/>    			    		
+    	</javac>
+  	</target>
+
+  	<target name="jar.individual" depends="compile.individual">    
+    	<mkdir dir="${jar.location}"/>
+    	<mkdir dir="${build}/META-INF"/>
+    	
+    	
+    	<copy todir="${build}/webapp/WEB-INF">
+			<fileset dir="src/main/webapp/WEB-INF" includes="*.xml"/>
+		</copy>
+		    	
+    	
+		<jar jarfile="${jar.location}/org-${ant.project.name}.jar" basedir="${build}"/>
+  	</target>
+  	
+  	
+  	<!-- Methods only used by the top level of jaring or waring everything up -->
+  	
+  	<target name="jar" depends="init">    
+	    	<mkdir dir="${dist}/lib"/>		
+		<subant target="jar.individual">
+			<filelist refid="project.build.files"/>
+		</subant>					
+  	</target>
+  	
+  	<property name="stage.war.meta" location="src/main/webapp/META-INF"/>
+  	<property name="stage.war.lib" location="src/main/webapp/WEB-INF/lib"/>
+  	
+  	<target name="init.war">
+  		  <delete>
+   			 <fileset dir="${stage.war.lib}" includes="/*.jar"/>
+  		  </delete>
+ 		  <delete dir="${stage.war.meta}"/>
+  	</target>
+  	
+  	<target name="copy.files" depends="jar">
+  	
+  		<copy todir="${stage.war.lib}" flatten="true">
+			<fileset dir="${projects.basedir}" includes="*/dist/lib/*.jar" excludes="*test*.jar" />
+		</copy>
+  		<copy todir="${stage.war.lib}" flatten="true">
+  					<fileset dir="${projects.basedir}" includes="*/dist/lib/*.jar" excludes="*test*.jar" />
+  		</copy>
+		
+		<copy todir="${stage.war.lib}" flatten="true">
+			<fileset dir="${projects.basedir}" includes="common/configproperties/*.xml" />
+		</copy>
+		
+		<copy todir="${stage.war.lib}" flatten="true">
+			<fileset refid="common.jars"/>
+		</copy>	
+		<copy todir="${stage.war.lib}" flatten="true">
+                        <fileset refid="sv.jars"/>
+                </copy>
+  	</target>
+  	
+  	<target name="war" depends="init.war,copy.files">
+  		<war destfile="dist/lib/helpdesk.war" webxml="src/main/webapp/WEB-INF/web.xml">
+			<fileset dir="src/main/webapp">
+				<exclude name="**/.svn"/>
+			</fileset>
+  		<lib dir="src/main/webapp/WEB-INF/lib" />
+  		<classes dir="${build}/classes" />
+		</war>  		
+  	</target>
+  	
+</project>

@@ -1,0 +1,897 @@
+@media (min-width: 480px) and (max-width: 1279px) {
+.food_dish_infolist .food_dish_infolistcont ul{
+	width:282px !important;
+}
+}
+
+@media (min-width: 980px) and (max-width: 1240px) {
+}
+ @media (max-width: 1400px) {
+.banner_content {
+	top: 50%;
+}
+.innerbanner_content, .checkout_content {
+	top: 70%;
+}
+}
+ @media (max-width: 1100px) {
+.container_info {
+	width: 96%;
+}
+.banner_content h2 {
+	margin: 0 0 10px 0;
+	font-size: 40px;
+	line-height: 40px;
+}
+.banner_content h6 {
+	margin: 0 0 15px 0;
+}
+.delivery_address ul li {
+	width: 50%;
+	margin: 0 0px 25px 0;
+	padding: 0 10px 0 0;
+}
+.card_exp ul li {
+	margin: 0 10px 10px 0;
+}
+.card_exp ul li.mm_inp, .card_exp ul li.yy_inp, .card_exp ul li.cvv_inp {
+	width: 60px;
+}
+.card_exp ul li.cardno_inp {
+	width: 204px;
+}
+.checkout_orderlist .checkout_orderlistconthead ul li .checkout_orderlistinfo.checkout_orderlistinfo2, .checkout_orderlist .checkout_orderlistcont ul li .checkout_orderlistinfo.checkout_orderlistinfo2 {
+	width: 150px;
+}
+.checkout_orderlist .checkout_orderlistconthead ul li .checkout_orderlistinfo.checkout_orderlistinfo3, .checkout_orderlist .checkout_orderlistcont ul li .checkout_orderlistinfo.checkout_orderlistinfo3 {
+	width: 100px;
+}
+.stores_list ul li {
+	width: 232px;
+}
+table.categories_table tr td:nth-child(2) {
+	width: 42%;
+}
+table.checkout_orderlist thead tr th {
+	padding: 0 5px;
+}
+table.checkout_orderlist > tbody > tr > td {
+	padding: 15px 5px;
+}
+}
+ @media (max-width: 980px) {
+.header_banner_info header .profile_campaign_list .shopping_list {
+	margin: 0 30px 0 0;
+}
+.banner_content {
+	width: 90%;
+}
+.banner_content h2 {
+	font-size: 30px;
+	line-height: 30px;
+}
+.banner_content h6 {
+	margin: 0 0 10px 0;
+	font-size: 18px;
+}
+.banner_content .banner_tabsinfo {
+	padding: 10px;
+}
+.banner_content .banner_tabsinfo .resp-tabs-container {
+	margin: 0 0 0 -20px;
+}
+
+.tab_heading img {
+	padding: 15px 10px;
+}
+table.categories_table tr td {
+	padding: 5px;
+}
+table.categories_table tr td:nth-child(1) {
+	width: 25%;
+}
+table.categories_table tr td:nth-child(1) img {
+	width: 100%;
+}
+table.categories_table tr td:nth-child(2) {
+	width: 35%;
+}
+.categories_table a.addcart_btn {
+	padding: 0 10px;
+	font-size: 12px;
+}
+table.checkout_orderlist thead tr th {
+	font-size: 16px;
+}
+.table_responsive_myprofile {
+	width: 100%;
+	position: relative;
+	overflow: auto;
+}
+.table_responsive_myprofile table {
+	width: 850px;
+	margin: 0;
+}
+.payment_details .payment_detailslist ul li {
+	padding: 0 10px 0 0;
+}
+.checkout_right {
+	margin: 0 10px 0 0;
+}
+.inner_storedetails{
+	padding-top:20px;
+}
+}
+ @media (max-width: 767px) {
+.container_info {
+	width: 100%;
+	padding: 0 15px;
+}
+.food_grocery_beverage_info .food_grocery_beverage_list {
+	padding: 0 15px;
+	margin-bottom: 20px;
+}
+.header_banner_info header .logo_info {
+	width: 200px;
+	margin: 5px 0 0 0;
+}
+.header_banner_info header .profile_campaign_list .profile_campaign_listcont .btn-default .profile_pic2 {
+	width: 36px;
+	height: 36px;
+}
+.header_banner_info header .profile_campaign_list .profile_campaign_listcont .btn-default {
+	font-size: 16px;
+}
+.banner_info {
+	display: none;
+}
+.banner_content {
+	position: relative;
+	left: auto;
+	top: auto;
+	transform: none;
+	-webkit-transform: none;
+	-moz-transform: none;
+	/*padding: 75px 0 0 0;*/
+	padding: 10px 0 0 0;
+}
+.banner_content h2 {
+	color: #000;
+	text-shadow: none;
+	font-size: 22px;
+}
+.banner_content h6 {
+	color: #333;
+	margin: 0 0 20px 0;
+}
+.banner_content .banner_tabsinfo .resp-tabs-container {
+	margin: 0;
+}
+.banner_content .banner_tabsinfo .resp-tabs-container:after {
+	display: none;
+}
+.banner_content .banner_tabsinfo .resp-tabs-container h2.resp-accordion {
+	font-size: 20px;
+	color: #ff9900;
+	text-transform: uppercase;
+	font-family: 'allerregular';
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	padding: 5px 10px;
+	border: 1px solid #ccc;
+	border-top: 0px solid #000;
+}
+.banner_content .banner_tabsinfo .resp-tabs-container h2.resp-accordion:first-child {
+	border-top: 1px solid #ccc !important;
+}
+.food_grocery_beverage_info, .testimonials_info {
+	padding: 40px 0;
+}
+.footer_menu {
+	width: 100%;
+	text-align: center;
+	margin: 0 0 10px 0;
+}
+.soacial_info {
+	width: 100%;
+	text-align: center;
+}
+.footer_menu ul li {
+	margin: 0 10px;
+}
+.login_register_info {
+	position: absolute;
+	overflow: auto;
+	height: auto;
+}
+.login_register_list {
+	position: relative;
+	top: 30px;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	transform: none;
+	-webkit-transform: none;
+	-moz-transform: none;
+}
+.login_register_list .resp-tabs-container h2.resp-accordion {
+	background: #fff;
+	font-size: 26px;
+	color: #000;
+	font-weight: normal;
+	font-family: 'Calibri';
+}
+
+
+.myprofile_info .resp-vtabs .resp-tabs-container {
+	padding: 0;
+}
+.myprofile_info .resp-tab-content {
+	padding: 20px;
+}
+.myprofile_info h2.resp-accordion {
+	font-family: 'aller_lightregular';
+	font-size: 15px;
+	color: #222222;
+}
+
+
+.account_list {
+	padding: 0;
+	background: none;
+	border: 0;
+	box-shadow: none;
+	margin: 0 0 10px 0;
+}
+.account_list .account_listcont {
+	padding: 0 0 20px 0;
+	margin: 0 0 20px 0;
+	border-bottom: 1px solid #C1C1C1;
+}
+
+.table-responsive table.categories_table tr td {
+	display: inline-block;
+	width: 40%;
+	border: 0 !important;
+}
+
+.sortby li {
+	width: auto !important;
+}
+
+
+body.mobileoverflow_hidde .wrapper, body.mobileoverflow_hidde footer {
+	-webkit-filter: blur(4px);
+	-moz-filter: blur(4px);
+	-o-filter: blur(4px);
+	-ms-filter: blur(4px);
+	filter: blur(4px);
+	position:fixed;
+}
+.shopping_dropdown .continuecheckout_total_info {
+	padding: 10px;
+	position: relative;
+	bottom: auto;
+}
+.content {
+	height: auto;
+}
+.brand_scrolling {
+	/*padding: 0 0 65px 0;*/
+	padding: 0;
+	height: auto !important;
+}
+.header_banner_info header {
+	position: relative;
+}
+
+
+.resp-htabs .resp-tab-content{
+	min-height:inherit;
+	border-radius:0;
+	border:1px solid #c1c1c1;
+}
+
+}
+ @media (max-width: 600px) {
+.header_banner_info header .logo_info {
+	/*width: 150px;
+	margin: 6px 0 0 0;*/
+	display: none;
+}
+.header_banner_info header .logo_info2 {
+	display: block;
+}
+.header_banner_info header .profile_campaign_list .profile_campaign_listcont .profile_dropdown {
+	top: 45px;
+	right: 0;
+}
+.header_banner_info header .profile_campaign_list .shopping_list {
+	margin: 0 25px 0 0;
+	min-height: 40px;
+}
+.header_banner_info header .profile_campaign_list .profile_campaign_listcont .profile_pic2 {
+	width: 30px;
+	height: 30px;
+}
+.header_banner_info header .profile_campaign_list .profile_campaign_listcont .profile_list {
+	font-size: 14px;
+}
+.banner_content h2 {
+	font-size: 18px;
+	line-height: 20px;
+}
+.banner_content h6 {
+	font-size: 14px;
+	margin: 0 0 10px 0;
+}
+.banner_content .banner_tabsinfo .resp-tabs-container h2.resp-accordion {
+	font-size: 16px;
+}
+.banner_tabslist .resp-tabs-container .banner_tabslistcont {
+	padding: 10px;
+}
+.banner_content .banner_tabsinfo .banner_tabscont input[type="text"], .banner_content .banner_tabsinfo .banner_tabscont input[type="email"], .banner_content .banner_tabsinfo .banner_tabscont input[type="password"], .banner_content .banner_tabsinfo .banner_tabscont input[type="tel"] {
+	font-size: 15px;
+}
+
+
+.testimonials_info ul li h4 {
+	font-size: 24px;
+	margin: 0 0 15px 0;
+}
+.testimonials_info ul li h5 {
+	font-size: 16px;
+	margin: 0 0 15px 0;
+}
+.testimonials_info ul li .testimonials_img {
+	margin: 0 0 15px 0;
+}
+.testimonials_info ul li p {
+	line-height: 24px;
+	font-size: 16px;
+	margin: 0 0 15px 0;
+}
+.footer_menu ul {
+	margin: 0 0 5px 0;
+}
+.footer_menu ul li {
+	margin: 0 5px 5px 5px;
+	font-size: 12px;
+}
+.footer_menu p {
+	font-size: 12px;
+}
+.soacial_info ul li a {
+	width: 36px;
+	height: 36px;
+	font-size: 18px;
+	line-height: 34px;
+}
+
+
+.accounts_from {
+	margin: 0;
+}
+.accounts_from ul li {
+	width: 100%;
+	margin: 0 0 25px 0;
+}
+.editprofile_tabs h2.resp-accordion {
+	font-size: 18px;
+	font-family: 'allerregular';
+	color: #fff;
+	font-weight: normal;
+	text-transform: uppercase;
+	background: #438ead;
+	border: 0 !important;
+}
+.complete_orderbtn {
+	height: 40px;
+	line-height: 40px;
+	font-size: 20px;
+}
+.editprofile_tabs h2.resp-accordion .resp-arrow {
+	border-top: 12px solid #fff;
+}
+.editprofile_tabs h2.resp-accordion.resp-tab-active span.resp-arrow {
+	border: none;
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-bottom: 12px solid #fff;
+}
+.innerbanner_info {
+	height: 200px;
+}
+.checkout_content {
+	top: 50%;
+}
+.login_register_list .resp-tab-content {
+	padding: 10px 20px;
+}
+
+
+.brand_name img {
+	width: 120px;
+}
+.brand_nametxt h4 {
+	margin: 10px 0 8px;
+}
+.storedetails_content {
+	bottom: auto;
+	top: 210px;
+}
+.inner_food_grocery_beverage {
+	padding: 10px 0;
+}
+ul.cat_main_nav li {
+	margin: 0 20px;
+}
+.sortby {
+	margin: 10px 0 5px 0;
+}
+
+
+.myprofile_info .resp-tab-content {
+	padding: 10px;
+}
+.account_list {
+	padding: 10px;
+}
+table.checkout_orderlist thead tr th {
+	font-size: 14px;
+}
+.table_responsive_myprofile table th {
+	width: 120px !important;
+}
+.account_list h5 {
+	font-size: 16px;
+	margin: 0 0 15px 0;
+}
+.storedetail_modal .modal-dialog h2 {
+	font-size: 18px;
+	margin: 0 0 10px 0;
+	padding: 0 0 10px 0;
+	font-family: 'allerbold';
+}
+.spicinesslevel_btn {
+	margin: 0 0 5px 0;
+	padding: 0 10px 0 0;
+}
+.spicinesslevel_btn i.check_icon {
+	margin: 0px 5px 4px 5px;
+}
+.inner_storedetails {
+	padding-top: 20px;
+}
+.myprofile_info {
+	min-height: inherit;
+}
+.address_info .newdeliveryaddress_btn {
+	padding: 0 15px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 16px;
+}
+
+
+.banner_content .banner_tabsinfo ul li, .banner_content .banner_tabsinfo ul .active_bg {
+	width: 110px;
+	font-size: 16px;
+}
+.login_register_list .resp-tabs-container .register_tabinfo, .login_register_list .resp-tabs-container .login_tabinfo {
+	padding: 15px 20px;
+	min-height: 430px;
+}
+.innerbanner_content p {
+	font-size: 15px;
+}
+.innerbanner_content h6, .search_address input[type="text"], .search_address input[type="tel"], .search_address input[type="email"], .search_address input[type="password"] {
+	font-size: 15px;
+}
+
+}
+ @media (max-width: 490px) {
+.categories_navinfo .tab_heading {
+	width: 100% !important;
+	position: relative;
+	margin: 0 0 10px 0;
+}
+.categories_navinfo ul {
+	width: 100% !important;
+	margin: 0 !important;
+}
+.z-tabs.mobile > ul.z-tabs-nav > li.z-active {
+	display: none;
+}
+.categories_navinfo .z-tabs.mobile.z-shadows > ul.z-tabs-mobile {
+	border: 0 !important;
+	border-width: 0;
+	border-color: transparent;
+	border-style: none;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+.categories_navinfo .z-tabs.mobile.z-shadows > ul.z-tabs-mobile li {
+	border: 0 !important;
+}
+.categories_navinfo .z-tabs.mobile.z-shadows > ul.z-tabs-mobile li a {
+	border: 0 !important;
+	border: 1px solid #e3e3e3 !important;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+.editaccountinformation_btns {
+	padding: 10px;
+}
+}
+ @media (max-width: 412px) {
+.header_banner_info header {
+	top: 0;
+	padding: 10px;
+}
+.header_banner_info header .logo_info2 {
+	width: 34px;
+	margin: 3px 0 0 0;
+}
+/*.header_banner_info header .logo_info {
+	width: 150px;
+	margin: 0 auto 20px auto;
+	float: none;
+}
+.header_banner_info header .logo_info {
+	display: none;
+}
+.header_banner_info header .logo_info2 {
+	display: block;
+	margin: 0 auto 20px auto;
+	float: none;
+}*/
+.header_banner_info header .profile_campaign_list .profile_campaign_listcont {
+	padding: 0 0 0 10px;
+}
+.header_banner_info header .profile_campaign_list .shopping_list .shopping_count {
+	right: -10px;
+}
+.header_banner_info header .profile_campaign_list .shopping_list {
+	margin: 0 15px 0 0;
+}
+.banner_content h2 {
+	font-size: 20px;
+}
+.banner_content h6 {
+	font-size: 14px;
+}
+.banner_content .banner_tabsinfo .resp-tab-content {
+	padding: 15px 0 15px 15px;
+}
+/*.banner_content .banner_tabsinfo .banner_tabscont input[type="text"], .banner_content .banner_tabsinfo .banner_tabscont input[type="email"], .banner_content .banner_tabsinfo .banner_tabscont input[type="password"], .banner_content .banner_tabsinfo .banner_tabscont input[type="tel"] {
+	width: 80%;
+}*/
+.login_register_list {
+	padding: 10px;
+}
+.login_register_list .login_register_tabscont .login_register_imglist ul li img {
+	display: block;
+	width: 90%;
+	margin: 0 auto;
+}
+.login_register_list .login_register_tabscont form .submit_btn {
+	height: 50px;
+}
+.shopping_dropdown {
+	width: 300px;
+	top: 60px;
+}
+.header_banner_info header.fixed .profile_campaign_list .shopping_list .shopping_dropdown {
+	top: 126px;
+}
+.shopping_dropdown ul li .product_img {
+	width: 20%;
+	margin-bottom: 15px;
+}
+.shopping_dropdown ul li .product_img img {
+	width: 100%;
+}
+.shopping_dropdown ul li .product_name {
+	width: 70%;
+}
+.shopping_dropdown ul li .product_aty {
+	width: 60%;
+	padding: 0;
+}
+.shopping_dropdown ul li .product_price {
+	width: 28%;
+	padding: 0;
+	line-height: 30px;
+}
+.shopping_dropdown ul li .product_aty {
+	clear: left;
+}
+.cartblue_stip {
+	height: 40px;
+}
+.cartblue_stiplft {
+	width: 60%;
+	padding: 0 10px;
+	line-height: 40px;
+}
+.cartblue_stiprght {
+	width: 40%;
+	padding: 0 10px;
+	line-height: 40px;
+}
+.cart_close {
+	width: 40px;
+	left: -40px;
+}
+.checkout_remove {
+	/*padding: 26px 0 0 0;*/
+	padding: 0;
+	float: right;
+}
+.checkout_orderlist ul li .checkout_remove {
+	padding: 0;
+}
+.shopping_dropdown .continuecheckout_total_info .contchek_txt {
+	font-size: 18px;
+}
+.brand_scrolling {
+	padding: 0 0 60px 0;
+}
+.shopping_dropdown .continuecheckout_total_info {
+	padding: 7px;
+	/*height: 30px;
+	line-height: 30px;
+	bottom: 30px;*/
+	bottom: 0;
+}
+.next_delivery select {
+	width: 100%;
+}
+.delivery_address ul li {
+	width: 100%;
+	padding: 0 0 0 0;
+	margin: 0 0 10px 0;
+}
+.card_exp ul li {
+	margin: 0 10px 10px 0;
+	width: 80px;
+}
+.card_exp ul li.cardno_inp {
+	width: 100%;
+}
+.card_exp ul li.mm_inp, .card_exp ul li.yy_inp, .card_exp ul li.cvv_inp {
+	width: 80px;
+}
+.checkout_content {
+	top: 60%;
+}
+.login_register_list .resp-tab-content {
+	padding: 10px 0px;
+}
+.login_register_list .login_register_tabscont .login_register_imglist {
+	padding: 0 0 10px 0;
+}
+.login_register_list .login_register_tabscont .login_register_imglist ul {
+	text-align: center;
+}
+.login_register_list .login_register_tabscont .login_register_imglist ul li {
+	width: 20%;
+	float: none;
+	display: inline-block;
+	margin: 0 10px;
+}
+.login_register_list .resp-tabs-container h2.resp-accordion {
+	padding: 5px 10px !important;
+	font-size: 20px;
+}
+.login_register_list .login_register_tabscont form ul li input[type="text"], .login_register_list .login_register_tabscont form ul li input[type="email"], .login_register_list .login_register_tabscont form ul li input[type="password"], .login_register_list .login_register_tabscont form ul li input[type="tel"] {
+	height: 40px;
+	font-size: 18px;
+}
+.login_register_list .login_register_tabscont form ul li .img_field {
+	float: left;
+	padding: 7px 0 0 15px;
+}
+.login_register_list .login_register_tabscont form ul li .img_field img {
+	width: 20px;
+}
+.login_register_list .login_register_tabscont form ul li {
+	margin: 0 0 10px 0;
+}
+.login_register_list .login_register_tabscont form .submit_btn {
+	height: 40px;
+	font-size: 24px;
+	margin: 15px 0 0 0;
+}
+.login_register_list .login_register_tabscont form ul li .input_field {
+	padding: 0 0 0 50px;
+}
+.testimonials_info h4 {
+	font-size: 24px;
+}
+.testimonials_info h5 {
+	font-size: 15px;
+}
+.payment_details .payment_detailslist ul li {
+	padding: 0;
+}
+.checkout_right {
+	margin: 0;
+}
+.checkout_orderlist .checkout_orderlistcont ul li .addnote_info {
+	width: 100%;
+}
+.addnote_info input[type="text"] {
+	display: block;
+	width: 100%;
+}
+.next_delivery_info .next_delivery {
+	margin: 5px 0 0 0;
+	width: 100%;
+}
+.checkout_info {
+	height: auto;
+	padding: 0;
+}
+.checkout_info .checkout_content h3 {
+	font-size: 24px;
+}
+.account_list ul li {
+	margin: 0 0 10px 0;
+	padding: 0 0 10px 0;
+}
+.account_list ul li .name_val {
+	width: 100%;
+	float: none;
+}
+.account_list ul li .inp_val {
+	padding: 0;
+	width: 100%;
+}
+.checkout_content h3 {
+	font-size: 30px;
+}
+table.checkout_orderlist thead tr th {
+	font-size: 12px;
+}
+.table_responsive_myprofile table th {
+	width: 100px !important;
+}
+.stores_list ul li {
+	width: 100%;
+	margin: 0 0 10px 0;
+}
+ul.cat_main_nav li {
+	margin: 0 9px;
+}
+ul.cat_main_nav li a {
+	width: 70px;
+	font-size: 14px;
+	padding: 70px 0 0;
+	line-height: 24px;
+}
+ul.cat_main_nav li.active a.food, ul.cat_main_nav li a.grocery, ul.cat_main_nav li a.beverage, ul.cat_main_nav li.active a.grocery, ul.cat_main_nav li.active a.beverage {
+	background-size: 80% auto;
+}
+.sortby {
+	float: left;
+	width: 100%;
+}
+/*.sortby li {
+	line-height: 22px;
+	font-size: 12px;
+	margin: 5px 0;
+	display: inline-block;
+	vertical-align: top;
+	float: none;
+}
+.sortby li:last-child {
+	margin: 5px 0 0 0;
+}*/
+.category_list ul li {
+	display: inline-block;
+	vertical-align: top;
+	float: none;
+	margin: 0 5px 5px 0;
+}
+.storesdeatils_btns a.checkout_store {
+	width: 150px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 12px;
+}
+.storesdeatils_btns a.cencel {
+	width: 70px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 12px;
+}
+.banner_content .banner_tabsinfo ul li, .banner_content .banner_tabsinfo ul .active_bg {
+	width: 80px;
+	font-size: 14px;
+}
+.login_register_list .login_register_listtabhead li {
+	font-size: 20px;
+}
+.login_register_list .resp-tabs-container .register_tabinfo, .login_register_list .resp-tabs-container .login_tabinfo {
+	padding: 15px;
+	min-height: 320px;
+}
+.editaccountinformation_btns .close, .editaccountinformation_btns .submit_btn {
+	width: 110px;
+}
+.shopping_dropdown ul li {
+	padding: 10px;
+}
+.quantityform_info .qtydownarrow {
+	width: 27px;
+	height: 30px;
+	top: auto;
+	overflow: hidden;
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	line-height: normal;
+	font-size: 15px;
+	font-family: 'DroidSans';
+	font-weight: normal;
+	background: #E4E4E4 !important;
+	border: 1px solid #d3d3d3;
+	color: #555555;
+	border-left: 0;
+	float: left;
+}
+.quantityform_info .qtyinput {
+	display: inline-block;
+	vertical-align: middle;
+	width: 40px;
+	border: 1px solid #d3d3d3;
+	border-left: 0;
+	border-right: 0;
+	text-align: center;
+	font-size: 16px;
+	font-family: 'DroidSans';
+	color: #000;
+	height: 30px;
+	float: left;
+}
+.quantityform_info .qtydownarrow:hover {
+	background: none !important;
+}
+.quantityform_info .qtyuparrow {
+	width: 27px;
+	bottom: auto;
+	height: 30px;
+	position: relative;
+	overflow: hidden;
+	display: inline-block;
+	vertical-align: middle;
+	line-height: normal;
+	font-size: 15px;
+	font-family: 'DroidSans';
+	font-weight: normal;
+	background: #E4E4E4 !important;
+	border: 1px solid #d3d3d3;
+	color: #555555;
+	border-right: 0;
+	float: left;
+}
+.quantityform_info .qtyuparrow:hover, .quantityform_info .qtydownarrow:hover {
+	background: #187716 !important;
+	border: 1px solid #187716;
+	color: #fff;
+}
+.shopping_dropdown ul li:hover .quantityform_info .qtyuparrow, .shopping_dropdown ul li:hover .quantityform_info .qtydownarrow {
+	display: inline-block;
+}
+}
+ @media (max-width: 350px) {
+.shopping_dropdown {
+	width: 250px;
+}
+}

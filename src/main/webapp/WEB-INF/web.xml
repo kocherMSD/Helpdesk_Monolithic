@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+    version="3.0">
+    	<display-name>Helpdesk</display-name>
+	
+	
+	<servlet>
+		<servlet-name>mvc-dispatcher</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>mvc-dispatcher</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+         <param-value>/WEB-INF/applicationContext.xml,
+		  /WEB-INF/mvc-dispatcher-servlet.xml</param-value>
+	</context-param>
+        
+        <listener>
+            <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+        </listener>
+		<listener>
+            <listener-class>
+             org.springframework.web.context.request.RequestContextListener </listener-class>
+        </listener>
+		<listener>
+    <listener-class> org.springframework.security.web.session.HttpSessionEventPublisher</listener-class>
+</listener>
+      <servlet>
+		<servlet-name>jersey-servlet</servlet-name>
+		<servlet-class>
+			com.sun.jersey.spi.spring.container.servlet.SpringServlet
+		</servlet-class>
+		<init-param>
+		  <param-name>
+              com.sun.jersey.config.property.packages
+           </param-name>
+			<param-value>org.helpdesk.webservice.implementation</param-value>	
+			</init-param>
+			<init-param>
+		   <param-name>com.sun.jersey.api.json.POJOMappingFeature</param-name>
+		   <param-value>true</param-value>
+	    </init-param>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+     
+	     <servlet-mapping>
+	   		 <servlet-name>jersey-servlet</servlet-name>
+	   			 <url-pattern>/rest/*</url-pattern>
+	  	</servlet-mapping>
+    
+
+ <servlet>
+  <servlet-name>AddData</servlet-name>
+    <servlet-class>jquery.datatables.controller.AddData</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddData</servlet-name>
+    <url-pattern>/AddData</url-pattern>
+  </servlet-mapping>
+     <servlet>
+   <servlet-name>CompanyAjaxDataSource</servlet-name>
+    <servlet-class>jquery.datatables.controller.CompanyDataTableAjaxDataSourceServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CompanyAjaxDataSource</servlet-name>
+    <url-pattern>/CompanyAjaxDataSource</url-pattern>
+  </servlet-mapping>
+  
+ <servlet>
+    <servlet-name>DeleteData</servlet-name>
+    <servlet-class>jquery.datatables.controller.DeleteData</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteData</servlet-name>
+    <url-pattern>/DeleteData</url-pattern>
+  </servlet-mapping>
+  
+  
+   <servlet>
+    <servlet-name>UpdateData</servlet-name>
+    <servlet-class>jquery.datatables.controller.UpdateData</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateData</servlet-name>
+    <url-pattern>/UpdateData</url-pattern>
+  </servlet-mapping>
+
+<servlet-mapping>
+    <servlet-name>default</servlet-name>
+    <url-pattern>*.css</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+    <servlet-name>default</servlet-name>
+    <url-pattern>*.js</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+    <servlet-name>default</servlet-name>
+    <url-pattern>*.jpg</url-pattern>
+</servlet-mapping> 
+<servlet-mapping>
+    <servlet-name>default</servlet-name>
+    <url-pattern>*.png</url-pattern>
+</servlet-mapping><!-- The 'static' content -->
+
+<jsp-config>
+    <jsp-property-group>
+        <url-pattern>/**</url-pattern>
+        <el-ignored>true</el-ignored>
+    </jsp-property-group>
+</jsp-config>
+
+</web-app>

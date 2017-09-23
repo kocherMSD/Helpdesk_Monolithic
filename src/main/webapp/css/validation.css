@@ -1,0 +1,82 @@
+label.error {
+	position: absolute;
+	/*top: 9px;*/
+	right: 135px;
+	margin: 0;
+	background: #040404;
+	opacity: .7;
+	filter: alpha(opacity = 70);
+	color: #fff;
+	-moz-border-radius: 7px;
+	-webkit-border-radius: 7px;
+	border-radius: 7px;
+	-moz-box-shadow: 0 0 7px #000;
+	-webkit-box-shadow: 0 0 7px #000;
+	box-shadow: 0 0 7px #000;
+	border: 2px solid #fff;
+	padding: 5px 10px;
+	-webkit-transform: translateY(-140%);
+	transform: translateY(-140%);
+	-moz-transform: translateY(-140%);
+	-ms-transform: translateY(-140%);
+	-o-transform: translateY(-140%);
+	font-size: 12px !important;
+}
+
+label.error:before {
+	content: url(../images/triangle.png);
+	position: absolute;
+	bottom: -39.5px;
+	height: 39.5px;
+	margin: 0 0 0 68px;
+} 
+
+
+
+
+
+
+
+label.error1:before {
+    content: url(../images/triangle.png);
+    position: absolute;
+    bottom: -39.5px;
+    height: 39.5px;
+    margin: 0 0 0 26px;
+}
+
+
+
+
+label.error2 {
+    position: absolute;
+    / top: 9px; /
+    right: 60px;
+    margin: 0 0 0 50px;
+    background: #040404;
+    opacity: .7;
+    filter: alpha(opacity = 70);
+    color: #fff;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    border-radius: 7px;
+    -moz-box-shadow: 0 0 7px #000;
+    -webkit-box-shadow: 0 0 7px #000;
+    box-shadow: 0 0 7px #000;
+    border: 2px solid #fff;
+    padding: 5px 10px;
+    -webkit-transform: translateY(-140%);
+    transform: translateY(-140%);
+    -moz-transform: translateY(-140%);
+    -ms-transform: translateY(-140%);
+    -o-transform: translateY(-140%);
+    font-size: 12px !important;
+}
+
+label.error2:before {
+    content: url(../images/triangle.png);
+    position: absolute;
+    bottom: -39.5px;
+    height: 39.5px;
+    margin: 0 0 0 121px;
+}
