@@ -105,6 +105,26 @@ public class CaseCreateInputsServiceImpl implements CaseCreateInputsService {
 
 		return pdResponse;
 	}
+	
+	public ProductDetailsResponse getAllProductsSolutions(
+			@Context HttpHeaders headers ) throws ServiceInvocationException {
+		ProductDetailsResponse pdResponse = null;
+		try {
+			
+			
+			{
+				
+			pdResponse = caseCreateInputsServiceHelper
+					.getAllProductDetails();
+			}
+			pdResponse.setResponseStatus("SUCCESS");
+		} catch (Throwable e) {
+			logger.error(e.toString());
+			
+		}
+
+		return pdResponse;
+	}
 
 	/*
 	 * (non-Javadoc)

@@ -29,14 +29,15 @@
 	 InputStream stream = new FileInputStream(configFile);
 	 Properties props = new Properties();
 	 props.load(stream);
+     String title=request.getParameterValues("title")[0];
 	%>
 	function createMessage()
 		 {
-		var createMessage='<%= props.getProperty("endPoints.createMessage") %>';
-		var getMessage=='<%= props.getProperty("endPoints.getMessage") %>';
-		var user=document.getElementById("user").value;
+		    var createMessage='<%= props.getProperty("endPoints.createMessage") %>';
+		    var getMessage='<%= props.getProperty("endPoints.getMessage") %>';
+		    var user=document.getElementById("user").value;
 		    var comment=document.getElementById("comment").value;
-		    var title = getParameterByName('title');
+		    var title = "<%=title%>";
 			if(title=='')
 			 {
 				var title=document.getElementById("title1").value;
@@ -46,6 +47,7 @@
 				alert("Please fill the apporopriate values")
 				return;
 			 }
+        alert(comment);
 		    var currentDate = new Date()
 			var day = currentDate.getDate()
 			var month = currentDate.getMonth() + 1
@@ -73,44 +75,46 @@
 		   
 		   
  
-  window.location.reload(); }
+  window.location.reload(); 
+    }
 
  </script>
 <script>
 	
   $(document).ready(function() {
-           var title = getParameterByName('title');
+            var title = "<%=title%>";
+      		var getMessage='<%= props.getProperty("endPoints.getMessage") %>';
+
 	 if(title!='')
 	  {
-		$.ajax({
-			//url: "http://localhost:9080/helpdesk/rest/MessageService/getMessage/"+title
-			url: getMessage"+title
-
+	$.ajax({
+			url: getMessage+""+"<%=title%>"
 		}).then(function(data) {
-		 var conunt=1; 
-		$("#title").append(title);
-		var response=data.messages;
-		var response1=data.date;
-		for(i=0;i<response.length;i++)
-		{
-            var $tr = $('<tr class="Users_Catalogue_bg">').append(
-            $('<td>').text(response[i]),
-            $('<td>').text(response1[i])
+			var response=data.date;
+            var response1=data.messages;
+		  var	conunt=1; 
+		  $.each(response1, function(i, item) {
+               var $tr = $('<tr class="Users_Catalogue_tdheader_bg">').append(
+            $('<td>').text(item),
+            $('<td>').text(response),
         ).appendTo('#added-articles');
-		}
-	 });
+		conunt++;
+           
+          });
+          });
 	  }
 	  else
 	  {
+          alert('hi')
 	   $("#title").append('<input type="text" id="title1" class="form-control check_input" placeholder="Caser Title" style="color: #FD0C0C; width:100%"/>');
-	   $('#added-articles').hide();
+	  $('#added-articles').hide();
 	  }
 	});
 	</script>
 	
 	
 	<script>
-			   function getParameterByName(name) {
+			function getParameterByName(name) {
 			name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
 			var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
 				results = regex.exec(location.search);
@@ -149,7 +153,7 @@
 							  <%
 								}
 							  %>
-                                <li class="active"><a href="productcatalogue">Product Catalogue</a></li><input type=hidden value=<%=user%> id="user">
+                                <li class="active"><a href="productcatalogue">My Products </a></li><input type=hidden value=<%=user%> id="user">
                                 <li><a href="createCaseOr">Create an Incident</a></li>
                                 <li><a href="notesAll">Message Board</a></li>
                                 <li><a href="viewAllCase">View Incident</a></li>
@@ -162,7 +166,7 @@
 							   <%
 								}
 							  %>
-								<li><a href="takeAppointment">Take Appointment</a></li>
+								<li><a href="takeAppointment">Make Appointment</a></li>
 								<li><a href="search">Search</a></li>
                                    <input type=hidden value=<%=user%> id="user">
 
@@ -200,13 +204,13 @@
                 <div class="col-md-12 wow fadeInLeft" data-wow-delay="0.4s">
                     <div class="living_box">
 
-									<div> Title :- <span id="title" class="inp_val">  </span>
+									<div> Title :- <span id="title" class="inp_val" > <%=title%> </span>
 									</div>
 							<div>
 							 <table border="1" id="added-articles" class="Users_Catalogue">
                             <thead>
                                 <tr class="Users_Catalogue_tdheader_bg">
-                                   
+                                
                                     <td>Comment</td>
                                     <td>Date </td>
                                 </tr>

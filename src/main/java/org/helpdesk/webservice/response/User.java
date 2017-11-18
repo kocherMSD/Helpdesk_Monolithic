@@ -12,7 +12,35 @@ import javax.persistence.Column;
 public class User {
 	
 		private String ccoid;	
-		  
+		private String password;	
+		private String city;	
+		private String country;	
+		
+		@XmlElement
+		public String getPassword() {
+			return password;
+		}
+
+		public void setPassword(String password) {
+			this.password = password;
+		}
+		@XmlElement
+		public String getCity() {
+			return city;
+		}
+
+		public void setCity(String city) {
+			this.city = city;
+		}
+		@XmlElement
+		public String getCountry() {
+			return country;
+		}
+
+		public void setCountry(String country) {
+			this.country = country;
+		}
+
 		private String firstname;	
 		  
 		private String middlename;	

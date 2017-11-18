@@ -109,7 +109,7 @@ props.load(stream);
              dataType: 'json',
             data: JSON.stringify(dataToSend)    ,
       success: function(data, textStatus, jqXHR) { 
-    alert(data)
+ 
  $("#results").empty();
   productString='';
  if(typeof data.catalogue != "undefined"){
@@ -246,7 +246,7 @@ function objToString (obj) {
 							   <%
 								}
 							  %>
-								<li><a href="takeAppointment">Take Appointment</a></li>
+								<li><a href="takeAppointment">Make Appointment</a></li>
 								<li><a href="search">Search</a></li>
 
 								<div class="clearfix"></div>
@@ -268,7 +268,7 @@ function objToString (obj) {
                 <div class="modal_popup_dropdown-button">
                             <select class="dropdown" id="profile" tabindex="9" onchange="jsfunction()" data-settings='{"wrapperClass":"flat"}'>
                                 <option value="0"><a href="/profile">My Profile</a></option>
-                                <option value="1"><a href="/">Log Out</a></option>
+                                <option value="1"><a href="/logout">Log Out</a></option>
                     </select>
                 </div>
 

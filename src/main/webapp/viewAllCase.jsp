@@ -31,7 +31,20 @@
 	 Properties props = new Properties();
 	 props.load(stream);
 	  %>
+      var viewAllTicket='';
+     <%
+      String user = (String)request.getAttribute("user");
+      if(session.getAttribute("ACCESS_LEVEL").equals("3"))
+       {
+      %>
 	  var viewAllTicket = '<%= props.getProperty("endPoints.viewAllTicket") %>';
+      <% }
+        else
+        {
+       %>
+        var viewAllTicket = '<%= props.getProperty("endPoints.viewUsersTicket") %>'+"<%=user%>";
+        <% }
+       %>
 	  var printTicket = '<%= props.getProperty("endPoints.printTicket") %>';
       
 	$(document).ready(function() {
@@ -43,7 +56,7 @@
 		  var	conunt=1; 
 		  $.each(response, function(i, item) {
             var $tr = $('<tr class="Users_Catalogue_bg">').append(
-			$('<td>').html('<a href='+printTicket+'?id='+conunt+'>'+conunt+'</a>'),
+			$('<td>').html('<a href='+printTicket+'?id='+item.id+'>'+item.id+'</a>'),
             $('<td>').text(item.descriptiveSummary),
             $('<td>').text("Sun Dec 13 2015")
         ).appendTo('#added-articles');
@@ -83,7 +96,7 @@
               <ul class="nav" id="nav">
 				                    
 						     <%
-                                                                       String user = (String)request.getAttribute("user");
+                          user = (String)request.getAttribute("user");
                         if(session.getAttribute("ACCESS_LEVEL").equals("4"))
                                                                                 {
 
@@ -106,7 +119,7 @@
 							   <%
 								}
 							  %>
-								<li><a href="takeAppointment">Take Appointment</a></li>
+								<li><a href="takeAppointment">Make Appointment</a></li>
                            		<li><a href="search">Search</a></li>
 
 								<div class="clearfix"></div>

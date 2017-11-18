@@ -13,7 +13,9 @@ import org.helpdesk.commons.exception.ServiceInvocationException;
 import org.helpdesk.webservice.extension.HelpDeskViewTicket;
 import org.helpdesk.webservice.support.HelpDeskViewTicketHelper;
 import org.helpdesk.webservice.request.NoteRequest;
+import org.helpdesk.webservice.request.ResolveRequest;
 import org.helpdesk.webservice.response.NoteResponse;
+import org.helpdesk.webservice.response.ResolveResponse;
 import org.helpdesk.webservice.response.ViewAllTicketResponse;
 import org.helpdesk.webservice.response.ViewTicketResponse;
 import org.springframework.beans.BeansException;
@@ -39,6 +41,17 @@ public class HelpDeskViewTicketImpl implements HelpDeskViewTicket {
 		return response;
 	}
 	
+	@POST
+	@Consumes({"application/xml", "application/json"})
+	@Produces({"application/json"})
+	@Path("/resolveTicket")
+	public ResolveResponse resolveTicket(@Context HttpHeaders headers, ResolveRequest request)
+			throws ServiceInvocationException {
+		 ResolveResponse response=new  ResolveResponse();
+		response=helper.resolveTicket(request);
+		return response;
+	}
+	
 	@Override
 	@GET
 	@Consumes({"application/xml", "application/json"})
@@ -50,15 +63,24 @@ public class HelpDeskViewTicketImpl implements HelpDeskViewTicket {
 		return response;
 	}
 	
+	@GET
+	@Consumes({"application/xml", "application/json"})
+	@Produces({"application/json"})
+	@Path("/viewUsersTicket/{userId}")
+	public ViewAllTicketResponse viewUsersTicket(@Context HttpHeaders headers,@PathParam("userId")String  userId)
+			throws ServiceInvocationException {
+		ViewAllTicketResponse response=helper.getAllTicket(userId);
+		return response;
+	}
 	
 	@Override
 	@GET
 	@Consumes({"application/xml", "application/json"})
 	@Produces({"application/json"})
-	@Path("/viewTicket/{userId}/{ticketId}")
-	public ViewTicketResponse viewTicket(@Context HttpHeaders headers,@PathParam("userId")String  userId, @PathParam("ticketId")String  ticketId)
+	@Path("/viewTicket/{ticketId}")
+	public ViewTicketResponse viewTicket(@Context HttpHeaders headers, @PathParam("ticketId")String  ticketId)
 			throws ServiceInvocationException {
-		ViewTicketResponse response=helper.getTicket(userId,ticketId);
+		ViewTicketResponse response=helper.getTicket(ticketId);
 		return response;
 	}
 

@@ -53,6 +53,9 @@ public class TicketRequestEntity  extends BaseBusinessObject{
 	
 	@Column(name="emailAddress")
 	private String emailAddress;
+	
+	@Column(name="resolution")
+	private String resolution;
 		
 	
 	public String getEmailAddress() {
@@ -205,6 +208,12 @@ public class TicketRequestEntity  extends BaseBusinessObject{
 	 */
 	public void setIssueScope(String issueScope) {
 		this.issueScope = issueScope;
+	}
+	public String getResolution() {
+		return resolution;
+	}
+	public void setResolution(String resolution) {
+		this.resolution = resolution;
 	}	
 
 }

@@ -11,7 +11,7 @@
     <link href="css/style.css" rel='stylesheet' type='text/css' />
     <!-- Custom Theme files -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+   
     <!--webfont-->
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -19,33 +19,34 @@
     <script src="js/jquery.easydropdown.js"></script>
     <script src="js/wow.min.js"></script>
     <link href="css/animate.css" rel='stylesheet' type='text/css' />
-    <script>
-        new WOW().init();
-    </script>
-	<script>
+   
+	
 	<% File configDir = new File(System.getProperty("catalina.base"), "lib");
 	 File configFile = new File(configDir, "application.properties");
 	 InputStream stream = new FileInputStream(configFile);
 	 Properties props = new Properties();
 	 props.load(stream);
 	%>
-	
+	<script type="text/javascript">
   $(document).ready(function() {
-	  var viewTicket=='<%= props.getProperty("endPoints.viewTicket") %>';
-	  var user=$( "#user" ).val();
-                var ticketId = getParameterByName('id');
-				$.ajax({
-			//url: "http://localhost:9080/helpdesk/rest/HelpDeskViewTicket/viewTicket/"+user+"/"+ticketId
-			url: viewTicket+user+"/"+ticketId
-
+      
+      var user=$( "#user" ).val();
+      var ticketId = getParameterByName('id');
+	  var viewTicket='<%= props.getProperty("endPoints.viewTicket") %>'+ticketId;
+       alert(viewTicket);
+	  
+      
+		$.ajax({
+			url: viewTicket
 		}).then(function(data) {
 		 var conunt=1; 
 		$("#ticketNo").append(ticketId);
-		$("#accounttNo").append(ticketId);
+		$("#accountNo").append(data.contractNumber);
 		$("#status").append(data.statusName);
 		$("#userName").append(data.userId);
 		$("#emailAddress").append(data.emailAddress);
 		$("#severity").append(data.severityId);
+        $("#resolution").append(data.resolution);
 		$("#descriptiveSummary").append(data.descriptiveSummary);
 		
 
@@ -89,8 +90,8 @@
                 <ul class="nav" id="nav">
 				                   
 						     <%
-                                                                       String user = (String)request.getAttribute("user");
-                        if(session.getAttribute("ACCESS_LEVEL").equals("4"))
+                          String user = (String)request.getAttribute("user");
+                          if(session.getAttribute("ACCESS_LEVEL").equals("4"))
                                                                                 {
 
                                                                         %>
@@ -99,12 +100,12 @@
 							  <%
 								}
 							  %>
-                                <li class="active"><a href="productcatalogue">Product Catalogue</a></li><input type=hidden value=<%=user%> id="user">
+                                <li class="active"><a href="productcatalogue">My Product</a></li><input type=hidden value=<%=user%> id="user">
                                 <li><a href="createCaseOr">Create an Incident</a></li>
                                 <li><a href="notesAll">Message Board</a></li>
                                 <li><a href="viewAllCase">View Incident</a></li>
 								 <%
-									if(user.equals("arsinghcs@gmail.com"))
+									if(session.getAttribute("ACCESS_LEVEL").equals("4"))
 									{
                                 
 									%>
@@ -112,7 +113,7 @@
 							   <%
 								}
 							  %>
-								<li><a href="takeAppointment">Take Appointment</a></li>
+								<li><a href="takeAppointment">Make Appointment</a></li>
                            		<li><a href="search">Search</a></li>
 
 								<div class="clearfix"></div>
@@ -144,18 +145,17 @@
         <div class="clearfix"></div>
     </div>
     <div class="banner">
-      <div class="container_wrap">
+      <div>
 
           <div class="living_middle" width="100%">
               <div class="container" class="Users_Catalogue">
-                  <h2 class="title block-title">View</h2>
+                  <h2 class="title block-title">View Tickets</h2>
                   <div class="col-md-12 wow fadeInLeft" data-wow-delay="0.4s">
                       <div class="living_box">
                           <div class="account_list">
                               <div>
                                   <h5>Account Information </h5> 
                               </div>
-                              <div class="row clearfix">
                                   <div class="col-md-4">
                                       <div class="account_listcont">
                                           <ul>
@@ -168,7 +168,7 @@
                                                   <div id="accountNo" class="inp_val"></div>
                                               </li>
                                               </ul>
-</div>
+                                   </div>
                                   </div>
                                   <div class="col-md-4">
                                       <div class="account_listcont">
@@ -198,27 +198,52 @@
                                           </ul>
                                       </div>
                                   </div>
-                              </div>
                               <div class="row clearfix"  style="margin-top:5%">
                                   <div class="col-lg-12">
                                       
                                       <div class="living_desc" style="margin-bottom:4%;">
-                                          <a href="#" class="btn4" style="text-decoration:none" >Notes</a>
+                                          <a href="#" class="btn4" style="text-decoration:none" >Resolution</a>
                                       </div>
                                       <table border="1" class="Users_Catalogue">
                                           <tbody>
                                               <tr >
+                                                  <%
+                                                  if(session.getAttribute("ACCESS_LEVEL").equals("1"))
+									                 {
+                                                     %>
                                                   <td>
-                                                      <textarea class="form-control" placeholder="Enter your case note here " style="min-width: 100%"></textarea>
+                                                      <label id="resolution"></label>
                                                   </td>
+                                                      
+                                                       <%
+                                                        }
+                                                     %>
+                                                              <%
+                                                  if(session.getAttribute("ACCESS_LEVEL").equals("3"))
+									                 {
+                                                     %>
+                                                  <td>
+                                                      <textarea  id="resolution" class="form-control" placeholder="Enter your case note here " style="min-width: 100%"></textarea>
+                                                  </td>
+                                                      
+                                                       <%
+                                                        }
+                                                     %>
                                                   
                                               </tr>
                                            
                                               
                                           </tbody>
                                       </table>
+                                                            <%
+                                                  if(session.getAttribute("ACCESS_LEVEL").equals("3"))
+									                 {
+                                                     %>
 
                                       <a href="#" class="btn3" style="margin-top:1%">Submit</a>
+                                        <%
+                                                        }
+                                                     %>
 
 
                                   </div>

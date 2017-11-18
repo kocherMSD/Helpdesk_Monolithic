@@ -70,21 +70,21 @@
 							  <%
 								}
 							  %>
-                                <li class="active"><a href="productcatalogue">Product Catalogue</a></li><input type=hidden value=<%=user%> id="user">
+                                <li class="active"><a href="productcatalogue">My Product</a></li><input type=hidden value=<%=user%> id="user">
                                 <li><a href="createCaseOr">Create an Incident</a></li>
                                 <li><a href="notesAll">Message Board</a></li>
                                 <li><a href="viewAllCase">View Incident</a></li>
 								  
 						     <%
-                        if(session.getAttribute("ACCESS_LEVEL").equals("4"))
-                                                                                {
+                                if(session.getAttribute("ACCESS_LEVEL").equals("4"))
+                              {
 
                                                                         %>
 								  <li><a href="appointment">Appointment</a></li>
 							   <%
 								}
 							  %>
-								<li><a href="takeAppointment">Take Appointment</a></li>
+								<li><a href="takeAppointment">Make Appointment</a></li>
 								<li><a href="search">search</a></li>
 
 								<div class="clearfix"></div>
@@ -114,8 +114,8 @@
     <div class="myprofile_info">
         <div id="horizontalTab" class="resp-htabs">
           <ul class="resp-tabs-list">
-            <li><img src="images/myprofile_tab_img1.png"> Account</li>
-            <li><img src="images/myprofile_tab_img3.png"> Device</li>
+            <li><img src="images/myprofile_tab_img1.png"> Profile</li>
+            <li><img src="images/myprofile_tab_img3.png"> Account</li>
           </ul>
           <div class="resp-tabs-container">
 
@@ -125,19 +125,19 @@
                   <ul>
                     <li>
                       <div class="name_val">First Name :</div>
-                      <div class="inp_val"> <input type="text" class="form-control check_input" disabled value=<%=user%> placeholder="First Name" style="color: #FD0C0C;"/></div>
+                      <div class="inp_val"> <input type="text" class="form-control check_input" disabled value="Parminder" placeholder="First Name"/></div>
                     </li>
                     <li>
                       <div class="name_val">Last Name : </div>
-                      <div class="inp_val"> <input type="text" class="form-control check_input" disabled value="" placeholder="Last Name" style="color: #FD0C0C;"/></div>
+                      <div class="inp_val"> <input type="text" class="form-control check_input"  value="Kocher"  disabled  placeholder="Last Name" /></div>
                     </li>
                     <li>
                       <div class="name_val">City : </div>
-                      <div class="inp_val"> <input type="text" class="form-control check_input" disabled value="Asutin" placeholder="City" style="color: #FD0C0C;"/></div>
+                      <div class="inp_val"> <input type="text" class="form-control check_input" disabled value="Austin" placeholder="City" /></div>
                     </li>
                     <li>
                       <div class="name_val">Country : </div>
-                      <div class="inp_val"> <input type="text" class="form-control check_input" disabled value="US" placeholder="Country" style="color: #FD0C0C;"/></div>&nbsp;
+                      <div class="inp_val"> <input type="text" class="form-control check_input" disabled value="US" placeholder="Country" /></div>&nbsp;
                     </li>
                     <li> 
                     </li>
@@ -152,21 +152,21 @@
                   <ul>
                     <li>
                       <div class="name_val">Account Start Date :</div>
-                      <div class="inp_val"> <input type="text" id="datepicker" class="form-control check_input" placeholder="Start Date" style="color: #FD0C0C;"/></div>
+                      <div class="inp_val"> <input type="text" id="datepicker" value='2005/12/12' placeholder="Start Date" /></div>
                     </li>
                     <li>
                       <div class="name_val">Account End Date : </div>
                       <div class="inp_val"> 
-						<input type="text" id="datepicker" class="form-control check_input" disabled placeholder="Start Date" style="color: #FD0C0C;"/>
+						<input type="text" id="datepicker" value="2025/12/12" disabled placeholder="Start Date" />
 					</div>
                     </li>
                     <li>
                       <div class="name_val">Account No : </div>
-                      <div class="inp_val"> <input type="text" class="form-control check_input" disabled placeholder="Account No:" style="color: #FD0C0C;"/></div>
+                      <div class="inp_val"> <input type="text" value="56789" disabled placeholder="Account No:" /></div>
                     </li>
                     <li>
                       <div class="name_val">Account Type : </div>
-                      <div class="inp_val"> <input type="text" class="form-control check_input"  disabled placeholder="Account Type" style="color: #FD0C0C;"/></div>&nbsp;
+                      <div class="inp_val"> <input type="text" value="Personal"  disabled placeholder="Account Type"/></div>&nbsp;
                     </li>
                     <li> 
                     </li>

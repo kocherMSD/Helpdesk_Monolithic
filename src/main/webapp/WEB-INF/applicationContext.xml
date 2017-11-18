@@ -20,15 +20,15 @@
 
 	 <bean id="placeholderConfig"
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-		<property name="location" value="classpath:Application.properties"></property><!--reads config.properties
+		<property name="location" value="classpath:application.properties"></property><!--reads config.properties
 			file -->
 	</bean>
 
  <bean id="DataSource" destroy-method="close" class="org.apache.tomcat.jdbc.pool.DataSource">
       	<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql://10.201.140.170:3306/helpdesk" />
-		<property name="username" value="root" />
-		<property name="password" value="Cisco@1234" />
+		<property name="url" value="jdbc:mysql://<Hostname>:3306/helpdesk" />
+		<property name="username" value="Username" />
+		<property name="password" value="Password" />
 		<property value="5" name="initialSize"/>
         <property value="50" name="maxActive"/>
         <property value="select 1 from dual" name="validationQuery"/>
@@ -75,7 +75,7 @@
 			<props>
 				<prop key="hibernate.dialect" >org.hibernate.dialect.MySQLDialect</prop>
 				<prop key="hibernate.show_sql" >true</prop>
-				<prop key="hibernate.hbm2ddl.auto" >update</prop>
+				<prop key="hibernate.hbm2ddl.auto" >create</prop>
 
 			</props>
 		</property>

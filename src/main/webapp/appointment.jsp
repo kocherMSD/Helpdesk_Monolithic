@@ -231,7 +231,7 @@
                                 <li><a href="notesAll">Message Board</a></li>
                                 <li><a href="viewAllCase">View Incident</a></li>				
 								<li><a href="appointment">Appointment</a></li>
-								<li><a href="takeAppointment">Take Appointment</a></li>
+								<li><a href="takeAppointment">Make Appointment</a></li>
 								<li><a href="search">Search</a></li>
 								
 								<div class="clearfix"></div>

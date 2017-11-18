@@ -57,12 +57,12 @@
 							  <%
                                                                 }
                                                           %>
-                                <li class="active"><a href="productcatalogue">Product Catalogue</a></li>
+                                <li class="active"><a href="productcatalogue">My Products</a></li>
                                 <li><a href="createCaseOr">Create an Incident</a></li>
                                 <li><a href="notesAll">Message Board</a></li>
                                 <li><a href="viewAllCase">View Incident</a></li>				
 								<li><a href="appointment">Appointment</a></li>
-								<li><a href="takeAppointment">Take Appointment</a></li>
+								<li><a href="takeAppointment">Make Appointment</a></li>
 								<li><a href="search">Search</a></li>
 								
 

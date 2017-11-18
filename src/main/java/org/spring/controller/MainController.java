@@ -113,7 +113,7 @@ public class MainController {
 		// A simple authentication manager
 		if(username != null && password != null){
 			
-			if( username.equals("pkocher") &&	password.equals(authenticateDao.getPassword(username)) ){
+			if( password.equals(authenticateDao.getPassword(username)) ){
 				// Set a session attribute to check authentication then redirect to the welcome uri; 
 				request.getSession().setAttribute("LOGGEDIN_USER", loginform);
 				request.getSession().setAttribute("ACCESS_LEVEL", authenticateDao.getAccessLevel(username));

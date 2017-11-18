@@ -18,7 +18,6 @@ public class AccountRequest {
 	
 	private User user;
 	private Contract contract;
-	private List<Device> devices;
 	
 	
 	/**
@@ -47,19 +46,7 @@ public class AccountRequest {
 	public void setContract(Contract contract) {
 		this.contract = contract;
 	}
-	/**
-	 * @return the devices
-	 */
-	@XmlElement(name="devices")
-	public List<Device> getDevices() {
-		return devices;
-	}
-	/**
-	 * @param devices the devices to set
-	 */
-	public void setDevices(List<Device> devices) {
-		this.devices = devices;
-	}
+	
 	
 
 }

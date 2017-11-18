@@ -25,6 +25,24 @@ public class UsersEntity  extends BaseBusinessObject{
     
     @Column(name="password")
     private String password;
+    
+    @Column(name="city")
+    private String city;
+    
+    public String getCity() {
+		return city;
+	}
+	public void setCity(String city) {
+		this.city = city;
+	}
+	public String getCountry() {
+		return country;
+	}
+	public void setCountry(String country) {
+		this.country = country;
+	}
+	@Column(name="country")
+    private String country;
 	  
     @Column(name="firstname")
 	private String firstname;	
@@ -64,6 +82,8 @@ public class UsersEntity  extends BaseBusinessObject{
     
     @Column(name="AppointmentCapability")
     private String  AppointmentCapability;
+    
+    
 	  
     /**
 	 * @return the weekend_restriction

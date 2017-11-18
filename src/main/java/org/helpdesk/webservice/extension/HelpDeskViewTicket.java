@@ -14,7 +14,7 @@ import org.springframework.context.ApplicationContextAware;
 
 public interface  HelpDeskViewTicket extends BeanFactoryAware, ApplicationContextAware {
 	
-	public abstract ViewTicketResponse viewTicket(@Context HttpHeaders headers,String userId,String ticketId) throws ServiceInvocationException;
+	public abstract ViewTicketResponse viewTicket(@Context HttpHeaders headers,String ticketId) throws ServiceInvocationException;
 	public abstract ViewAllTicketResponse viewAllTicket(@Context HttpHeaders headers) throws ServiceInvocationException;
 	public abstract NoteResponse addNote( @Context HttpHeaders headers, NoteRequest request) throws ServiceInvocationException;
 

@@ -6,21 +6,88 @@ import java.util.List;
 import org.helpdesk.db.model.BaseBusinessObject;
 import org.helpdesk.db.model.ContractEntity;
 import org.helpdesk.db.model.DeviceEntity;
+import org.helpdesk.db.model.ProductEntity;
 import org.helpdesk.db.model.UsersEntity;
 import org.helpdesk.webservice.request.AccountRequest;
+import org.helpdesk.webservice.request.DeviceRequest;
 import org.helpdesk.webservice.response.AccountViewResponse;
 import org.helpdesk.webservice.response.Contract;
 import org.helpdesk.webservice.response.Device;
 import org.helpdesk.webservice.response.User;
 import org.hibernate.criterion.DetachedCriteria;
+import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 
 public class AccountDao  extends DataService{
 	
+	public void saveDevice(DeviceRequest request)
+	{
+		String productFamily=request.getProductFamily();
+		String product=request.getProduct();
+		String serialNumber=request.getSerialNumber();
+		String accountId=request.getAccountId();
+   	    List<ProductEntity> products=new ArrayList<ProductEntity>();
+		DetachedCriteria criteria = DetachedCriteria.forClass(ProductEntity.class);
+		criteria.add(Restrictions.eq("productfamily",productFamily));
+		criteria.add(Restrictions.eq("pid",product));
+		criteria.addOrder(Order.asc("pid"));
+		List<BaseBusinessObject> retObj = findByCriteria(criteria);
+		for(BaseBusinessObject bo :retObj)
+		{
+			products.add(((ProductEntity)bo));
+		}
+		int id=(products.get(0)).getId();
+		DeviceEntity devdb=new DeviceEntity();
+		
+		devdb.setContractnumber(accountId);
+		devdb.setCreated_date(""+new java.sql.Date(new java.util.Date().getSeconds()));
+		devdb.setPID("Mobile Device");
+		devdb.setProduct_id(""+id);
+		devdb.setSerialnumber(serialNumber);
+		devdb.setServicelineID(accountId);
+		devdb.setSupported("Y");
+		devdb.setUpdated_date(""+new java.sql.Date(new java.util.Date().getSeconds()));
+		devdb.setVersion("1");
+		saveOrUpdate(devdb);
+		evict(devdb);
+	
+	}
+	public List<String> getProduct(String productFamily)
+	{
+		List<String> pList=new ArrayList<String>();
+		DetachedCriteria criteria = DetachedCriteria.forClass(ProductEntity.class);
+		criteria.add(Restrictions.eq("productfamily",productFamily));
+		criteria.addOrder(Order.asc("pid"));
+		List<BaseBusinessObject> retObj = findByCriteria(criteria);
+		for(BaseBusinessObject bo :retObj)
+		{
+			String pf=((ProductEntity)bo).getPid();
+			if(!pList.contains(pf))
+			    pList.add(pf);
+		}
+		
+		return pList;
+	}
+	
+	public List<String> getProductFamily()
+	{
+		List<String> pfList=new ArrayList<String>();
+		DetachedCriteria criteria = DetachedCriteria.forClass(ProductEntity.class);
+		criteria.addOrder(Order.asc("pid"));
+		List<BaseBusinessObject> retObj = findByCriteria(criteria);
+		for(BaseBusinessObject bo :retObj)
+		{
+			String pf=((ProductEntity)bo).getProductfamily();
+			if(!pfList.contains(pf))
+			    pfList.add(pf);
+		}
+		
+		return pfList;
+	}
 	
 	public void saveUpdate(AccountRequest request)
 	{
-		List<Device> devices=request.getDevices();
+		//List<Device> devices=request.getDevices();
 		User user =request.getUser();
 		Contract contract=request.getContract();
 		
@@ -29,7 +96,7 @@ public class AccountDao  extends DataService{
 		if(findUser(user.getCcoid()).getCcoid()!=null)
 		{
 			userdb.setId(findUser(user.getCcoid()).getId());
-			devices=new ArrayList<Device>();
+			//devices=new ArrayList<Device>();
 		}
 		
 		userdb.setAccesslevel(user.getAccesslevel());
@@ -71,7 +138,7 @@ public class AccountDao  extends DataService{
 		saveOrUpdate(contractdb);
 		evict(contractdb);
 		
-		for(Device device:devices)
+		/*for(Device device:devices)
 		{
 			DeviceEntity devdb=new DeviceEntity();
 			
@@ -90,13 +157,13 @@ public class AccountDao  extends DataService{
 			evict(devdb);
 			
 			
-		}
+		}*/
 	}
 		
 		
 		public void delete(AccountRequest request)
 		{
-			List<Device> devices=request.getDevices();
+		//	List<Device> devices=request.getDevices();
 			User user =request.getUser();
 			Contract contract=request.getContract();
 			
@@ -140,13 +207,13 @@ public class AccountDao  extends DataService{
 				contractdb.setServicelineenddate(contract.getServicelineenddate());
 				contractdb.setServicelinestatus(contract.getServicelinestatus());
 				contractdb.setUpdated_date(""+new java.sql.Date(new java.util.Date().getSeconds()));
-				contractdb.setVersion("0");
+				contractdb.setVersion("1");
 				
 			
 			delete(contractdb);
 			evict(contractdb);
 			
-			for(Device device:devices)
+		/**	for(Device device:devices)
 			{
 				DeviceEntity devdb=new DeviceEntity();
 				
@@ -165,7 +232,7 @@ public class AccountDao  extends DataService{
 				evict(devdb);
 				
 				
-			}
+			}**/
 		
 		
 	}

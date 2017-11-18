@@ -1,9 +1,15 @@
 package org.helpdesk.webservice.support;
 
+import java.util.List;
+
 import org.helpdesk.db.dao.AccountDao;
 import org.helpdesk.webservice.request.AccountRequest;
+import org.helpdesk.webservice.request.DeviceRequest;
 import org.helpdesk.webservice.response.AccountResponse;
 import org.helpdesk.webservice.response.AccountViewResponse;
+import org.helpdesk.webservice.response.DeviceResponse;
+import org.helpdesk.webservice.response.ProductFamilyResponse;
+import org.helpdesk.webservice.response.ProductResponse;
 
 
 public class AccountServiceHelper {
@@ -36,6 +42,14 @@ public class AccountServiceHelper {
 		return response;
 		
 	}
+	public  DeviceResponse addDevice(DeviceRequest req) {
+		   dao.saveDevice(req);
+		   DeviceResponse response =new DeviceResponse();
+		
+		
+		return response;
+		
+	}
 
 	public  AccountResponse deleteAccount(AccountRequest req) {
 		  dao.delete(req);
@@ -57,6 +71,20 @@ public class AccountServiceHelper {
 	 */
 	public void setDao(AccountDao dao) {
 		this.dao = dao;
+	}
+
+	public ProductFamilyResponse getProductFamily() {
+		ProductFamilyResponse response=new ProductFamilyResponse();
+		List<String> pfList=dao.getProductFamily();
+		response.setProductFamily(pfList);
+		return response;
+	}
+
+	public ProductResponse getProducts(String productFamily) {
+		ProductResponse response=new ProductResponse();
+		List<String> pList=dao.getProduct(productFamily);
+		response.setProducts(pList);
+		return response;
 	}
 
 }

@@ -56,8 +56,7 @@ public class MessageBoardDao extends DataService{
 		{
 		    DetachedCriteria criteria = DetachedCriteria.forClass(MessageBoard.class);
 		    criteria .setProjection(Projections.projectionList()
-			        .add(Projections.groupProperty("title"), "title")
-			        .add(Projections.property("created_date"), "created_date"))
+			        .add(Projections.groupProperty("title"), "title"))
 			        .setResultTransformer(Transformers.aliasToBean(MessageBoard.class));
 			List<BaseBusinessObject> retObj = findByCriteria(criteria);
 			for (BaseBusinessObject bo : retObj) {

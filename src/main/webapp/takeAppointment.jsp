@@ -206,20 +206,20 @@ function createAppointment()
 							  <%
 								}
 							  %>
-                                <li class="active"><a href="productcatalogue">Product Catalogue</a></li><input type=hidden value=<%=user%> id="user">
+                                <li class="active"><a href="productcatalogue">My Products</a></li><input type=hidden value=<%=user%> id="user">
                                 <li><a href="createCaseOr">Create an Incident</a></li>
                                 <li><a href="notesAll">Message Board</a></li>
                                 <li><a href="viewAllCase">View Incident</a></li>
 								 <%
-									if(user.equals("arsinghcs@gmail.com"))
-									{
+									if(session.getAttribute("ACCESS_LEVEL").equals("4"))
+                                 {
                                 
 									%>
 								  <li><a href="appointment">Appointment</a></li>
 							   <%
 								}
 							  %>
-								<li><a href="takeAppointment">Take Appointment</a></li>
+								<li><a href="takeAppointment">Make Appointment</a></li>
                            		<li><a href="search">Search</a></li>
 
 								<div class="clearfix"></div>

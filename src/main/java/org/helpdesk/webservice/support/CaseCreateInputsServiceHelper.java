@@ -113,21 +113,7 @@ public ProductDetailsResponse getAssociatedProductDetailsDummy(String ccoId){
 		        List<String> contracts=getContractNumbers(ccoId);
 				List<String> products=getProducts(contracts);			
 			
-			/*
-			// implement method to get data from back-end services instead of database
-				
-				//Fetching the contact information of the user
-				GetContractsResponse contactInfo=EFClient.GetContractsForCcoId(ccoId);
-				List<Record> contractrecords=contactInfo.getSEARCHRESULTS().getRecord();
-				
-				
-				//Fetching the serial numbers information of the User
-				   EFClient.GetSerialNumbersForContract(contracts);
-				
-				//Fetching the product details information from the list of contracts
-				   EFClient.GetSerialNumbersForContract(contracts);
-				
-			*/
+		
 				
 		
 			for(String product :products)
@@ -159,6 +145,51 @@ public ProductDetailsResponse getAssociatedProductDetailsDummy(String ccoId){
 		
 		return pdResponse;
 	}
+		/**
+		    * This is fetching the product and product details
+		    * @param productId
+		    * @return
+		    */
+			public ProductDetailsResponse getAllProductDetails(){
+				
+				List<ProductFamilyDetails> pfdetailsList = new ArrayList<ProductFamilyDetails>();
+				ProductDetailsResponse pdResponse = new ProductDetailsResponse();
+				try
+				{
+					List<String> products=getProducts();			
+				
+			
+					
+			
+				for(String product :products)
+					{
+					    ProductFamilyDetails pdDetails=new ProductFamilyDetails();
+						pdDetails.setProductFamily(getProductFamily(product));//"Catalyst 6500 Series");
+						pdDetails.setProductId(getPID(product));
+						pdDetails.setTechnologySolution(getTechnologySolution(product));
+						if(!pfdetailsList.contains(pdDetails))
+						pfdetailsList.add(pdDetails);
+					}
+				
+				 if (pfdetailsList.size() > 0) {
+					    Collections.sort(pfdetailsList, new Comparator<ProductFamilyDetails>() {
+					        @Override
+					        public int compare(final ProductFamilyDetails object1, final ProductFamilyDetails object2) {
+					            return object1.getProductFamily().compareTo(object2.getProductFamily());
+					        }
+					       } );
+					   }
+				     pdResponse.setProductFamilyListList(pfdetailsList);
+				}
+				catch(Exception e)
+				{
+				   logger.debug("There is an Exception in fetching the Product");	
+					
+				}
+			
+			
+			return pdResponse;
+		}
 		
        public ProductDetailsResponse getAssociatedProductDetails(String ccoId,String customerId){
 			
@@ -375,6 +406,31 @@ public ProductDetailsResponse getAssociatedProductDetailsDummy(String ccoId){
 		}
 		return products;
 	}
+     
+     /**
+ 	 * To fetch the number of products for contract numbers
+ 	 * @param ccoId
+ 	 * @return
+ 	 */
+      private List<String> getProducts() {
+ 		
+ 		List<String> products=new ArrayList<String>();
+ 		
+ 		
+ 			DetachedCriteria criteria = DetachedCriteria.forClass(ProductEntity.class);
+ 		    criteria.setResultTransformer(DetachedCriteria.DISTINCT_ROOT_ENTITY);
+ 			List<BaseBusinessObject> retObj = dataService.findByCriteria(criteria);
+ 			for(BaseBusinessObject bo :retObj)
+ 			{
+ 				if(!products.contains(((ProductEntity)bo).getId()))
+ 			       products.add(""+((ProductEntity)bo).getId());
+        			
+ 			}
+ 			
+ 		
+ 		return products;
+ 	}
+
      
  	/**
  	 * To fetch the number of product for contract number

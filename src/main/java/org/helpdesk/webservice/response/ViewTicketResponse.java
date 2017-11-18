@@ -12,7 +12,23 @@ public class ViewTicketResponse {
 	
 
 	//private String serialNumber;
-	//private String contractNumber;
+	private String contractNumber;
+	
+	@XmlElement
+	public String getContractNumber() {
+		return contractNumber;
+	}
+	public void setContractNumber(String contractNumber) {
+		this.contractNumber = contractNumber;
+	}
+	private String id;
+	@XmlElement 
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
 	private String userId;
 	private String summary;
 	private String statusName;
@@ -33,7 +49,15 @@ public class ViewTicketResponse {
 	private String access_level;
 	private String descriptiveSummary;
 	private String accesslevel;
+	private String resolution;
 	
+	@XmlElement 
+	public String getResolution() {
+		return resolution;
+	}
+	public void setResolution(String resolution) {
+		this.resolution = resolution;
+	}
 	private String emailAddress;
 		
 	

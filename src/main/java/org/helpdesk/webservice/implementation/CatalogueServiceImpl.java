@@ -47,6 +47,19 @@ public class CatalogueServiceImpl implements CatalogueService {
 		ProductDetailsResponse response=new ProductDetailsResponse();
 	    response=caseCreate.getProductsSolutions(headers, customerId);
 		return response;	}
+	
+	
+	@GET
+	@Consumes({"application/xml", "application/json"})
+	@Produces({"application/json"})
+	@Path("/getAllCatalogue")
+	public ProductDetailsResponse getAllCatalogue(@Context HttpHeaders headers)
+			throws ServiceInvocationException {
+
+		ProductDetailsResponse response=new ProductDetailsResponse();
+	    response=caseCreate.getAllProductsSolutions(headers);
+		return response;
+		}
 
 	@Override
 	@POST

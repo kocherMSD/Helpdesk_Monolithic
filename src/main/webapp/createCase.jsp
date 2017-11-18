@@ -232,7 +232,7 @@ input[type="submit"] {cursor:pointer;}
             type: 'POST',
 			dataType: 'json',
             data: JSON.stringify(dataToSend)    ,
-      success: function(data) {  $("#caseNumber").html("Success :- Case No. "+data.ticketNumber); }
+      success: function(data) {  $("#caseNumber").html("Case Created. Reference No for future. "+data.ticketNumber); }
         }).fail(function (jqXHR, textStatus, error) {
     // Handle error here
     alert(jqXHR.responseText);
@@ -289,7 +289,7 @@ input[type="submit"] {cursor:pointer;}
 							   <%
 								}
 							  %>
-								<li><a href="takeAppointment">Take Appointment</a></li>
+								<li><a href="takeAppointment">Make Appointment</a></li>
 								<li><a href="search">Search</a></li>
                                    <input type=hidden value=<%=user%> id="user">
 								<div class="clearfix"></div>
@@ -332,7 +332,7 @@ input[type="submit"] {cursor:pointer;}
 							<div>	Title	<input type="text" id="caseTitle" class="form-control check_input" placeholder="Caser Title" style="color: #FD0C0C; width:100%"/></div>
 									<div class="name_val">&nbsp;</div>
 									<fieldset>
-									<legend>Environment Status</legend>
+									<legend>Severity</legend>
 									  <table width="100%" >
 										<tr>
 											<td align="center">

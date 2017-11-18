@@ -15,8 +15,12 @@ import org.helpdesk.commons.exception.ServiceInvocationException;
 import org.helpdesk.webservice.extension.AccountService;
 import org.helpdesk.webservice.support.AccountServiceHelper;
 import org.helpdesk.webservice.request.AccountRequest;
+import org.helpdesk.webservice.request.DeviceRequest;
 import org.helpdesk.webservice.response.AccountResponse;
 import org.helpdesk.webservice.response.AccountViewResponse;
+import org.helpdesk.webservice.response.DeviceResponse;
+import org.helpdesk.webservice.response.ProductFamilyResponse;
+import org.helpdesk.webservice.response.ProductResponse;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.context.ApplicationContext;
@@ -39,6 +43,35 @@ public class AccountServiceImpl implements AccountService {
 		
 		AccountViewResponse response=new AccountViewResponse();
 		response=helper.getAccount(customerId);
+		
+		return response;
+	}
+	
+	@Override
+	@GET
+	@Consumes({"application/xml", "application/json"})
+	@Produces({"application/json"})
+	@Path("/getProductFamily")
+	public ProductFamilyResponse getProductFamily(@Context HttpHeaders headers)
+			throws ServiceInvocationException {
+		
+		ProductFamilyResponse response=new ProductFamilyResponse();
+		response=helper.getProductFamily();
+		
+		return response;
+	}
+	
+	
+	@Override
+	@GET
+	@Consumes({"application/xml", "application/json"})
+	@Produces({"application/json"})
+	@Path("/getProducts/{productFamily}")
+	public ProductResponse getProducts(@Context HttpHeaders headers, @PathParam("productFamily")String  productFamily)
+			throws ServiceInvocationException {
+		
+		ProductResponse response=new ProductResponse();
+		response=helper.getProducts(productFamily);
 		
 		return response;
 	}
@@ -67,6 +100,21 @@ public class AccountServiceImpl implements AccountService {
 		response.setResponseStatus("SUCCESS");
 		return response;
 	}
+	
+	@Override
+	@POST
+	@Consumes({"application/xml", "application/json"})
+	@Produces({"application/json"})
+	@Path("/addDevice/")
+	public DeviceResponse addDevice(@Context HttpHeaders headers, DeviceRequest req)
+			throws ServiceInvocationException {
+		DeviceResponse response=new DeviceResponse();
+		response=helper.addDevice(req);
+		response.setResponseStatus("SUCCESS");
+		return response;
+	}
+	
+	
 
 	@Override
 	@POST

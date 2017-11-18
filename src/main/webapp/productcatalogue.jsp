@@ -117,19 +117,17 @@
             <div class="menu">
                 <a class="toggleMenu" href="#"><img src="images/nav.png" alt="" /></a>
                 <ul class="nav" id="nav">
-				                   <%
+				                   
+                  <%
 				                   
 				                 LoginForm loginform=(LoginForm)session.getAttribute("LOGGEDIN_USER") ;
 				                   String user=loginform.getUsername();
-		                        if(session.getAttribute("ACCESS_LEVEL").equals("4"))
-		                                                                                {
 
 		                                                                        %>
 								
+							
                               <li class="active"><a href="productcatalogueAdmin">Product Catalogue Admin</a></li>
-							  <%
-								}
-							  %>
+                               
                                 <li class="active"><a href="productcatalogue">Product Catalogue</a></li>
                                 <input type=hidden value=<%=user%> id="user">
                                 <li><a href="createCaseOr">Create an Incident</a></li>
@@ -144,7 +142,7 @@
 							   <%
 								}
 							  %>
-								<li><a href="takeAppointment">Take Appointment</a></li>
+								<li><a href="takeAppointment">Make Appointment</a></li>
                            		<li><a href="search">Search</a></li>
                                    <input type=hidden value=<%=user%> id="user">
 
@@ -167,7 +165,7 @@
                 <div class="modal_popup_dropdown-button">
                             <select class="dropdown" id="profile" tabindex="9" onchange="jsfunction()" data-settings='{"wrapperClass":"flat"}'>
                                 <option value="0"><a href="/profile">My Profile</a></option>
-                                <option value="1"><a href="/">Log Out</a></option>
+                                <option value="1"><a href="/#">Log Out</a></option>
                     </select>
                 </div>
 
